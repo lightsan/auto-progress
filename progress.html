@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			width: 600px;
+			font-weight: 100;
+			font-size: 18px;
+			color: white;
+		}
+		.container .progress{
+			background-color: #eb7b59;
+			height: 37px;
+			background-image:repeating-linear-gradient(135deg,#eb7b59, #eb7b59 30px, #f09f87 30px, #f09f87 60px);
+			animation: autobar 12s linear infinite;
+			border-radius: 5px;
+			border-bottom: 0.2rem solid #dd481b;
+			position: relative;
+		}
+		@keyframes autobar {
+		  from {
+		    background-position: 0% 0%;
+		  }
+		
+		  to {
+		    background-position: 600px 0%;
+		  }
+		}
+		.progress[data-width="100%"]{
+			width: 100%
+		}
+		.progress:before {
+		  content: attr(data-content);
+		  display: block;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  padding: 8px;
+		  font-style: italic;
+		}
+		.progress:after {
+		  content: attr(data-width);
+		  display: block;
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  padding: 8px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="progress" data-width="100%" data-content="技能"></div>
+	</div>
+</body>
+</html>
